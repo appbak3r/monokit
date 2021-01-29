@@ -1,0 +1,27 @@
+{
+  "name": "monokit",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "garment build",
+    "storybook": "garment start storybook --watch",
+    "build-storybook": "garment build storybook"
+  },
+  "dependencies": {
+    "@garment/cli": "^0.14.1",
+    "@garment/plugin-runner-bin": "^0.14.0",
+    "@garment/plugin-runner-copy": "^0.14.0",
+    "@garment/plugin-runner-storybook": "^0.14.0",
+    "@garment/plugin-runner-ts": "^0.14.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "typescript": "^4.0.3"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "storybook",
+      "schematics/*"
+    ]
+  }
+}

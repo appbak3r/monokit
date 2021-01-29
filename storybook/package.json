@@ -1,0 +1,22 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@monokit/button": "^1.0.0",
+    "@monokit/input": "^1.0.0",
+    "@monokit/theme": "^1.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/react": "^6.1.15",
+    "babel-loader": "^8.2.2"
+  }
+}

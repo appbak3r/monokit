@@ -1,0 +1,17 @@
+{
+  "name": "@monokit/<%= dasherize(name) %>",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.7"
+  },
+  "files": [
+    "lib"
+  ]
+}

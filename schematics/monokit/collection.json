@@ -1,0 +1,19 @@
+{
+  "schematics": {
+    "package": {
+      "description": "Monorepo Package",
+      "factory": "./lib/package/index",
+      "schema": "./lib/package/schema.json"
+    },
+    "component": {
+      "description": "Monorepo Component",
+      "factory": "./lib/component/index",
+      "schema": "./lib/component/schema.json"
+    },
+    "add-dependency": {
+      "description": "Add dependency from one monorepo project to another",
+      "factory": "./lib/add-dependency/index",
+      "schema": "./lib/add-dependency/schema.json"
+    }
+  }
+}

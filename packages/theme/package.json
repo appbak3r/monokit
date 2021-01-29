@@ -1,0 +1,16 @@
+{
+  "name": "@monokit/theme",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "dependencies": {},
+  "files": [
+    "lib"
+  ],
+  "peerDependencies": {
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.7"
+  }
+}

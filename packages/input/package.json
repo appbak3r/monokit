@@ -1,0 +1,14 @@
+{
+  "name": "@monokit/input",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "./node_modules/@garment/workspace/schemas/config.schema.json",
+  "presets": {
+    "build": {
+      "tasks": {
+        "test": {
+          "runner": "jest",
+          "buildDependencies": true
+        },
+        "build": {
+          "runner": "ts",
+          "buildDependencies": true,
+          "input": "{{projectDir}}/src/**/*.ts?(x)",
+          "output": "{{projectDir}}/lib"
+        }
+      }
+    },
+    "copy-other-files": {
+      "tasks": {
+        "copy": {
+          "runner": "copy",
+          "output": "{{projectDir}}/lib",
+          "input": {
+            "rootDir": "{{projectDir}}/src",
+            "exclude": ["**/*.ts", "**/*.tsx", "**/*.js"]
+          }
+        },
+        "postbuild": ":copy"
+      }
+    }
+  },
+  "projects": {
+    "button": {
+      "extends": "build",
+      "path": "packages/button"
+    },
+    "input": {
+      "extends": "build",
+      "path": "packages/input"
+    },
+    "theme": {
+      "path": "packages/theme",
+      "extends": ["build"]
+    },
+    "schematics": {
+      "path": "schematics/monokit",
+      "tasks": {
+        "build": {
+          "runner": "ts",
+          "buildDependencies": true,
+          "input": "{{projectDir}}/src/**/*.ts?(x)",
+          "output": "{{projectDir}}/lib",
+          "options": {
+            "configFile": "{{projectDir}}/tsconfig.json"
+          }
+        }
+      },
+      "extends": ["copy-other-files"]
+    },
+    "storybook": {
+      "path": "storybook",
+      "tasks": {
+        "start": {
+          "runner": "storybook",
+          "buildDependencies": {
+            "task": "build",
+            "watch": true
+          },
+          "options": {
+            "configDir": "{{projectDir}}/.storybook",
+            "port": 6006,
+            "host": "0.0.0.0"
+          }
+        },
+        "build": {
+          "runner": "storybook"
+        }
+      }
+    }
+  },
+  "experimentalCacheSubscriptions": true,
+  "schematics": ["@monokit/schematics"]
+}
